@@ -7,4 +7,6 @@ git commit -m "add distributed"
 git log
 git log --pretty=oneline
 git reflog
-git reset --hard HEAD^
+git reset --hard HEAD^ 上个版本
+git reset --hard HEAD^^ 上上版本
+git reset --hard HEAD~100
