@@ -1,0 +1,10 @@
+mkdir
+git init
+git status
+git add readme.txt
+git commit -m "add distributed"
+
+git log
+git log --pretty=oneline
+git reflog
+git reset --hard HEAD^
