@@ -18,3 +18,20 @@ git reset HEAD readme.txt 把暂存区的修改回退到工作区(回退add)
 
 git rm test.txt 删除版本库里面的文件
 git checkout -- test.txt 把版本库里面的文件还原到工作区
+
+git branch 查看分支
+git branch name 创建分支
+git checkout name 切换分支
+git checkout -b name 创建+切换分支
+git merge name 合并某分支到当前分支
+git branch -d name 删除分支
+git branch -D name 强行删除分支
+
+git merge --no-ff -m "this is a new commit for merge" dev  合并dev分支，禁用"Fast Forward",能看到merge历史
+
+git stash 储藏工作现场（用于部分提交：有bug+手上工作未完成，先提交bug不提交工作现场）
+git stash list 
+git stash apply stash@{0} 恢复
+git stash drop 删除
+git stash pop 恢复+删除
+
