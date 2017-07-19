@@ -7,9 +7,14 @@ git commit -m "add distributed"
 git log
 git log --pretty=oneline
 git reflog
+
 git reset --hard HEAD^ 上个版本
 git reset --hard HEAD^^ 上上版本
 git reset --hard HEAD~100
 git diff HEAD -- readme.txt 查看工作区与版本库里面最新版本的区别
-git checkout -- readme.txt 把readme.txt在工作区的修改全部撤
 
+git checkout -- readme.txt 把readme.txt在工作区的修改全部撤销,回到最近一次commit或者add时的状态(回到commit的版本库或者回到add的缓存区),如果已经add不能,回到add状态
+git reset HEAD readme.txt 把暂存区的修改回退到工作区(回退add)
+
+git rm test.txt 删除版本库里面的文件
+git checkout -- test.txt 把版本库里面的文件还原到工作区
