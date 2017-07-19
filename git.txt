@@ -11,3 +11,5 @@ git reset --hard HEAD^ 上个版本
 git reset --hard HEAD^^ 上上版本
 git reset --hard HEAD~100
 git diff HEAD -- readme.txt 查看工作区与版本库里面最新版本的区别
+git checkout -- readme.txt 把readme.txt在工作区的修改全部撤
+
