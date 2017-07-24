@@ -6,6 +6,7 @@ git commit -m "add distributed"
 
 git log
 git log --pretty=oneline
+git log --oneline
 git reflog
 
 git reset --hard HEAD^ 上个版本
@@ -20,12 +21,12 @@ git rm test.txt 删除版本库里面的文件
 git checkout -- test.txt 把版本库里面的文件还原到工作区
 
 git branch 查看分支
-git branch name 创建分支
-git checkout name 切换分支
-git checkout -b name 创建+切换分支
-git merge name 合并某分支到当前分支
-git branch -d name 删除分支
-git branch -D name 强行删除分支
+git branch <name> 创建分支
+git checkout <name> 切换分支
+git checkout -b <name> 创建+切换分支
+git merge <name> 合并某分支到当前分支
+git branch -d <name> 删除分支
+git branch -D <name> 强行删除分支
 
 git merge --no-ff -m "this is a new commit for merge" dev  合并dev分支，禁用"Fast Forward",能看到merge历史
 
@@ -34,4 +35,25 @@ git stash list
 git stash apply stash@{0} 恢复
 git stash drop 删除
 git stash pop 恢复+删除
+
+git remote add origin https://github.com/zlsq/test.git 本地关联远程库
+git remote add origin git@github.com:zlsq/test.git 使用ssh，快于https
+git push -u origin master 把本地库的内容推送到远程 -u 关联本地与远程master分支
+git clone git@github.com:zlsq/test.git
+
+
+git remote -v 显示可抓取和推送的origin地址，若没有推送权限，则看不到push地址
+git push origin master 把该分支本地上的所有提交推送到远程库
+
+git tag <name,eg.v1.0> 打当前commit标签
+git tag 查看所有标签
+git log -pretty=oneline --abbrev-commit
+git tag <name> <commit.id> 给commit打上标签
+git show tag <name> 查看标签信息
+git tag -a <name> -m "version 0.1 released" <commit.id> 加说明文字
+git tag -d <name> 删除标签
+git push origin <tagname> 把标签推送远程（默认只存储在本地）
+git push origin --tags 推送所有本地标签
+git tag -d <name> 
+git push origin :refs/tags/<name> 删除本地和远程的标签
 
